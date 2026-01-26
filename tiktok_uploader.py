@@ -229,9 +229,8 @@ class CallbackHandler(BaseHTTPRequestHandler):
 def generate_pkce() -> str:
     """PKCE用のcode_verifierとcode_challengeを生成"""
     global _code_verifier
-    _code_verifier = secrets.token_urlsafe(64)[:128]
-    digest = hashlib.sha256(_code_verifier.encode('ascii')).digest()
-    code_challenge = base64.urlsafe_b64encode(digest).decode('ascii').rstrip('=')
+    _code_verifier = ''.join(secrets.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789') for _ in range(64))
+    code_challenge = hashlib.sha256(_code_verifier.encode('ascii')).hexdigest()
     return code_challenge
 
 
@@ -382,7 +381,7 @@ def upload_video_direct(video_path: str, caption: str, access_token: str,
         'source_info': {
             'source': 'FILE_UPLOAD',
             'video_size': video_size,
-            'chunk_size': min(video_size, 10 * 1024 * 1024),  # Max 10MB per chunk
+            'chunk_size': video_size,  # Single chunk upload
             'total_chunk_count': 1,
         }
     }
