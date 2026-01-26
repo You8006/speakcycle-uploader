@@ -56,17 +56,18 @@ speakcycle-uploader/
 
 ## 📋 コマンド一覧
 
-| コマンド | 説明 |
-|---------|------|
-| `--auth` | TikTokアカウントを認証 |
-| `--post --sandbox` | Sandboxモードで投稿 |
-| `--post --video <path>` | 本番モードで投稿 |
-| `--status` | 現在の状態を表示 |
-| `--refresh` | トークンをリフレッシュ |
+| コマンド                | 説明                   |
+| ----------------------- | ---------------------- |
+| `--auth`                | TikTokアカウントを認証 |
+| `--post --sandbox`      | Sandboxモードで投稿    |
+| `--post --video <path>` | 本番モードで投稿       |
+| `--status`              | 現在の状態を表示       |
+| `--refresh`             | トークンをリフレッシュ |
 
 ## 🧪 TikTok Sandbox モード
 
 Sandbox モードでは:
+
 - 動画は `SELF_ONLY` (自分のみ閲覧可) として投稿されます
 - 視聴数に制限があります
 - 本番承認前のテストに使用してください
@@ -82,6 +83,7 @@ Sandbox モードでは:
 `docs/` フォルダがGitHub Pagesとして公開されます。
 
 設定方法:
+
 1. GitHubリポジトリのSettings → Pages
 2. Source: Deploy from a branch
 3. Branch: main, Folder: /docs
@@ -101,6 +103,7 @@ Sandbox モードでは:
 ## 📝 TikTok審査対応
 
 審査に必要なもの:
+
 1. ✅ ホームページ URL: `https://yourusername.github.io/speakcycle-uploader/`
 2. ✅ Privacy Policy: `https://yourusername.github.io/speakcycle-uploader/privacy.html`
 3. ✅ Terms of Service: `https://yourusername.github.io/speakcycle-uploader/terms.html`
